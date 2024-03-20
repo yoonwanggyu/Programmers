@@ -1,0 +1,100 @@
+##  자릿수 더하기
+        # 재귀함수!!
+def sum_digit(number):
+    '''number의 각 자릿수를 더해서 return하세요'''
+    if number < 10:
+        return number
+
+    return number%10 + sum_digit(number//10)
+
+print("결과 : {}".format(sum_digit(123)))
+
+## 약수 더하기
+def solution(n):
+    answer = 0
+    for i in range(1,n+1):
+        if n % i == 0:
+            answer += i
+    return answer
+
+## "p" , "y" 찾기
+def numPY(s):
+    # 함수를 완성하세요
+    return s.lower().count('p') == s.lower().count('y')
+
+print( numPY("pPoooyY") )
+
+## 제곱근
+def nextSqure(n):
+    sqrt = n ** (1/2)
+
+    if sqrt % 1 == 0:
+        return (sqrt + 1) ** 2
+    return 'no' 
+
+## 하샤드 수
+def Harshad(n):
+    return n % sum(int(x) for x in str(n)) == 0
+
+
+## 두 정수 사이의 값
+def adder(a, b):
+    if a > b:
+        a, b = b, a
+    return sum(range(a, b + 1))
+
+## 음양 더하기
+        # zip() 함수!!
+def solution(absolutes, signs):
+    answer=0
+    for absolute,sign in zip(absolutes,signs):
+        if sign:
+            answer+=absolute
+        else:
+            answer-=absolute
+    return answer
+
+## 김서방 찾기
+def findKim(seoul):
+    # 함수를 완성하세요
+    return "김서방은 {}에 있다".format(seoul.index('Kim'))
+
+## 콜라츠 추출
+def solution(num):
+    count = 0
+    
+    while num != 1:
+        if count == 500:
+            return -1
+        
+        if num % 2 == 0:
+            num //= 2
+        else:
+            num = num * 3 + 1
+        
+        count += 1
+    
+    return count
+
+## 없는 숫자 더하기
+def solution(numbers):
+    return 45 - sum(numbers)
+
+
+## 나누어 떨어지는 숫자 배열
+def solution(arr,divisor):
+    return sorted([n for n in arr if n % divisor == 0]) or [-1]
+                                                        # or 앞이 참일 경우 해당 값까지만, 거짓일 경우 뒤에 호출       
+
+## 내적 구하기
+def solution(a, b):
+    return sum([x*y for x, y in zip(a,b)])
+
+## 약수의 개수와 덧셈
+def solution(left,right):
+    answer = 0
+    for i in range(left,right+1):
+        if int(i ** 0.5) == i ** 0.5:
+            answer += i
+        else:
+            answer == i
