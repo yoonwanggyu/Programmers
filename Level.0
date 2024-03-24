@@ -1,0 +1,128 @@
+# 각도 
+def solution(angle):
+    answer = (angle // 90) * 2 + (angle % 90 > 0) * 1
+    return answer
+
+
+def solution(angle):
+    angles = {180: 4, 91: 3, 90: 2, 0: 1}
+    for base, result in angles.items():
+        if angle >= base:
+            return result
+
+# 배열 원소의 길이
+def solution(strlist):
+    count = []
+    for i in range(len(strlist)):
+        count.append(len(strlist[i]))
+    return count 
+
+def solution(strlist):
+    return [len(str) for str in strlist]
+
+def solution(strlist):
+    answer = list(map(len,strlist))
+    return answer
+
+# 중복된 숫자 개수
+def solution(array,n):
+    return array.count(n)
+
+# 문자열 뒤집기
+my_string = "jaron"
+def solution(my_string):
+    answer = ""
+    for i in reversed(range(len(my_string))):
+        answer += my_string[i]
+    return answer
+
+def solution(my_string):
+    return my_string[::-1]
+
+def solution(my_string):
+    return ''.join(reversed(my_string))
+
+# 키 큰 사람
+def solution(array, height):
+    answer = 0
+    for i in array:
+        if i > height:
+            answer += 1
+    return answer
+
+def solution(array,height):
+    return sum(1 for i in array if i > height)
+
+
+def solution(n, k):
+    a = n * 12000
+    b = k * 2000
+    if n % 10 == 0:
+        b -= (n / 10)*2000
+    return a + b
+solution(10,3)
+
+# 피자 나눠먹기
+def solution(slice, n):
+    answer = n // slice
+    if n % slice > 0:
+        answer += 1
+    return answer
+
+def solution(n):
+    answer = 0
+    if n <= 7:
+        answer += 1
+    else :
+        answer += ((n-1) // 7)+1
+    return answer
+
+# 사분면 구하기
+def solution(dot):
+    quad = [(3,2),(4,1)]
+    return quad[dot[0] > 0][dot[1] > 0]
+
+# 특정 문자 지우기
+def solution(my_string, letter):
+    return my_string.replace(letter, '')
+
+def solution(my_string, letter):
+    answer = ' '
+    for string in my_string:
+        if string != letter:
+            answer += string
+    return answer
+
+# 숨어있는 숫자 덧셉
+def solution(my_string):
+    answer = 0
+    for i in my_string:
+        try:
+            answer = answer + int(i)
+        except:
+            pass
+
+    return answer
+
+# 조건에 맞게 수열 변환하기
+def solution(arr, k):
+    return [i*k if k%2!=0 else i+k for i in arr]
+
+
+# 접두사 확인
+def is_prefix(my_string, is_prefix):
+    return int(my_string.startswith(is_prefix))
+
+# 배열 만들기
+def solution(n, k):
+    return [i for i in range(k,n+1,k)]
+
+solution(10,3)
+
+# 특정 문자 대문자로
+def solution(my_string, alp):
+    return my_string.replace(alp, alp.upper())
+
+# 소/대문자 바꾸기
+def solution(my_string):
+    return my_string.swapcase()
