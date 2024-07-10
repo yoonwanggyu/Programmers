@@ -183,3 +183,36 @@ def solution(number):
                     answer += 1           
     return answer
 
+---------------------------------------------------------------------------------------------------------------------------
+# 07/10
+<최소직사각형> : 가로,세로 비교해서 큰 값, 작은 값 분리 후 큰값 중에 max와 작은 값 중에 max를 곱한다
+def solution(sizes):
+    w = []
+    h = []
+    for i in range(len(sizes)):
+        if sizes[i][0] > sizes[i][1]:
+            w.append(sizes[i][0])
+            h.append(sizes[i][1])
+        else:
+            w.append(sizes[i][1])
+            h.append(sizes[i][0])
+    return max(w) * max(h)
+
+<시저암호> : .find / .rfind / rindex 함수 사용법 / 
+		  : 아스키코드? 
+def solution(s, n):
+    answer = []
+    lower = 'abcdefghijklmnopqrstuvwxyz'
+    upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    
+    for i in s:
+        if i == ' ':
+            answer.append(' ')
+        elif i.islower() is True:
+            a = lower.find(i) + n
+            answer.append(lower[a % 26])
+        else:
+            b = upper.find(i) + n
+            answer.append(upper[b % 26])
+    return ''.join(answer)
+
